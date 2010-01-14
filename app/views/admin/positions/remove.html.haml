@@ -1,0 +1,16 @@
+%h1 Remove Position
+
+%p
+  Are you sure you want to
+  %strong.warning permanently remove
+  the following position? 
+
+.inset
+  %h2= @position.title
+  %p= @position.description
+
+- form_for [:admin, @position], :html => {:method => :delete, 'data-onsubmit_status'=>"Removing pages&#8230;"} do
+  %p.buttons
+    %input.button{:type=>"submit", :value=>"Delete Position"}/
+    or
+    = link_to 'Cancel', admin_positions_url

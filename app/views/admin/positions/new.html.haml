@@ -1,0 +1,19 @@
+- @page_title = 'New Position' + default_page_title
+
+- render_region :top do |top|
+  - top.header do
+    %h1 Edit Position
+- render_region :form do |form|
+  - form.details do
+    - form_for :position, @position, :url => admin_positions_path do |f|
+      %p.title
+        = f.label :title
+        = f.text_field :title, :class => 'textbox'
+      %p
+        = f.label :description
+        = f.text_area :description, :class => 'textarea large', :style => 'width: 100%'
+      %p.buttons{:style=>"clear: left"}
+        = save_model_button(@position)
+        = save_model_and_continue_editing_button(@position)
+        or
+        = link_to 'Cancel', admin_pages_url

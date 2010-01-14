@@ -1,0 +1,16 @@
+.outset
+  %table.index
+    %thead
+      %tr
+        %th Title
+        %th Description
+        %th Modify
+    %tbody
+      - @positions.each do |position|
+        %tr
+          %td= link_to position.title, edit_admin_position_path(position)
+          %td= position.description
+          %td.remove= link_to image('remove', :alt => 'remove position'), remove_admin_position_url(position)
+#actions
+  %ul
+    %li= link_to "New Position", new_admin_position_path

@@ -1,0 +1,2 @@
+module Admin::OpeningsHelper
+end
