@@ -17,9 +17,11 @@ class Admin::PositionsController < ApplicationController
   end
 
   def show
+    
   end
 
   def edit
+    @position = Position.find(params[:id])
   end
 
   def update
